@@ -4,8 +4,6 @@ import requests
 NOTION_TOKEN = os.getenv("NOTION_TOKEN")
 NOTION_DB_ID = os.getenv("NOTION_DB_ID")
 
-fetch_high_priority_tasks = fetch_tasks
-
 def fetch_tasks():
     url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}/query"
     headers = {
