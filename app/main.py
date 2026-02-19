@@ -5,6 +5,15 @@ from .telegram import send_message
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"status": "alive"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
 @app.on_event("startup")
 async def startup_event():
     start_scheduler()
