@@ -27,5 +27,6 @@ def start_scheduler():
    
     scheduler.add_job(morning_job, 'cron', hour=10, minute=0)
     scheduler.add_job(evening_job, 'cron', hour=18, minute=0)
+    
+    scheduler.add_job( run_reminder_engine, "interval", minutes=30) #new deadline monitor
     scheduler.start()
-    scheduler.add_job( run_reminder_engine, "interval", minutes=30) #new
