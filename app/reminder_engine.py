@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from .notion import fetch_high_priority_tasks
+from .notion_client import fetch_high_priority_tasks
 from .telegram import send_telegram_message
 
 
