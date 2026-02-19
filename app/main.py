@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from .scheduler import start_scheduler
 from .notion_client import fetch_tasks
 from .telegram import send_message
+from .reminder_engine import run_reminder_engine
+
 
 app = FastAPI()
 
