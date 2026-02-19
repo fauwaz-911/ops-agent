@@ -4,11 +4,6 @@ from .notion_client import fetch_tasks
 from .telegram import send_message
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(
-    run_reminder_engine,
-    "interval",
-    minutes=30
-)
 
 
 def morning_job():
