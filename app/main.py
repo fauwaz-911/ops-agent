@@ -7,6 +7,12 @@ from .reminder_engine import run_reminder_engine
 
 app = FastAPI()
 
+
+@app.get("/test-reminder")
+def test_reminder():
+    run_reminder_engine()
+    return {"status": "Reminder executed"}
+
 @app.get("/")
 def root():
     return {"status": "alive"}
