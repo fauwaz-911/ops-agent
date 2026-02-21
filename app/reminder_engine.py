@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from .notion_client import fetch_tasks
-from .telegram import send_telegram_message
+from .telegram import send_message
 
 
 def parse_date(date_str):
