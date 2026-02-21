@@ -8,6 +8,12 @@ from .scheduler import morning_job, evening_job #newest
 
 app = FastAPI()
 
+@app.get("/test-telegram")
+async def test_telegram():
+    from .telegram import send_message
+    send_message("TEST MESSAGE — pipeline check")
+    return {"status": "sent"}
+
 
 '''
 @app.get("/force-reminder")
