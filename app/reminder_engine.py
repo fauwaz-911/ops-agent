@@ -10,7 +10,7 @@ def parse_date(date_str):
 
 
 def build_reminders():
-    tasks = fetch_high_priority_tasks()
+    tasks = fetch_tasks()
     now = datetime.now(timezone.utc)
 
     reminders = []
@@ -40,5 +40,5 @@ def run_reminder_engine():
 
     if reminders:
         message = "🧠 Smart Task Alerts\n\n" + "\n\n".join(reminders)
-        send_telegram_message(message)
+        send_message(message)
 
