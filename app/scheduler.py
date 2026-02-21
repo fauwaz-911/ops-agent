@@ -2,6 +2,8 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 from .notion_client import fetch_tasks
 from .telegram import send_message
+from .reminder_engine import run_reminder_engine
+
 
 scheduler = BackgroundScheduler()
 
