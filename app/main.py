@@ -3,12 +3,13 @@ from .scheduler import start_scheduler
 from .notion_client import fetch_tasks
 from .telegram import send_message
 from .reminder_engine import run_reminder_engine
+
 from .scheduler import morning_job, evening_job #newest
 
 app = FastAPI()
 
 
-
+'''
 @app.get("/force-reminder")
 def force_reminder():
     run_reminder_engine()
@@ -22,13 +23,8 @@ def force_evening():
 @app.get("/force-morning")
 def force_morning():
     morning_job()
-    return {"status": "Morning job executed"}
+    return {"status": "Morning job executed"}  '''
 
-
-@app.get("/test-reminder")
-def test_reminder():
-    run_reminder_engine()
-    return {"status": "Reminder executed"}
 
 @app.get("/")
 def root():
@@ -56,3 +52,9 @@ async def send_update():
 
     send_message(message)
     return {"status": "sent"}
+
+@app.get("/force-reminder")
+async def force_reminder():
+    run_reminder_engine()
+    return {"status": "Reminder engine executed"}
+
