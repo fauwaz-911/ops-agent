@@ -1,8 +1,8 @@
 import os
 import requests
 
-NOTION_TOKEN = os.getenv("NOTION_TOKEN")
-NOTION_DB_ID = os.getenv("NOTION_DB_ID")
+NOTION_TOKEN = os.getenv("NOTION_API_KEY")
+NOTION_DB_ID = os.getenv("NOTION_TASKS_DB_ID")
 
 def fetch_tasks():
     url = f"https://api.notion.com/v1/databases/{NOTION_DB_ID}/query"
